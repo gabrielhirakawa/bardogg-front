@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Bardo.GG</title>
+        <link rel="shortcut icon" href="/favicon.png" />
         <link rel="shortcut" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <meta name="description" content="Status league of legends" />

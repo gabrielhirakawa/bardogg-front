@@ -19,6 +19,7 @@ const HeaderInfo = styled.div`
   flex-direction: column;
   img {
     height: 80px;
+    width: 80px;
     border-radius: 50%;
     border: 2px solid ${(props) => props.theme.blue};
     margin-bottom: 10px;
