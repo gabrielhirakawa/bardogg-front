@@ -1,4 +1,4 @@
-import FacebookLogin from 'react-facebook-login'
+import FacebookLogin, { ReactFacebookLoginInfo } from 'react-facebook-login'
 import { useRouter } from 'next/router'
 
 import * as S from './styles'
@@ -17,25 +17,31 @@ function Login() {
     }
   }
 
-  function responseFacebook(response) {
+  function responseFacebook(response: ReactFacebookLoginInfo) {
     const { name, email, accessToken, userID, picture } = response
 
-    const img = picture.data ? picture.data.url : ''
+    const n = name as string
+    const img = picture?.data.url as string
 
     localStorage.setItem('bardo_token', accessToken)
     localStorage.setItem('bardo_id', userID)
     localStorage.setItem('bardo_img', img)
-    localStorage.setItem('bardo_username', name)
-    loadLogin(userID, email, name, img)
+    localStorage.setItem('bardo_username', n)
+    loadLogin(response)
   }
 
-  async function loadLogin(id, email, name, img) {
+  async function loadLogin({
+    id,
+    email,
+    name,
+    picture
+  }: ReactFacebookLoginInfo) {
     const res = await api
       .post('/user', {
         id,
         email,
         name,
-        imageUrl: img,
+        imageUrl: picture?.data.url,
         typeAuth: 'facebook'
       })
       .catch((e) => alert('ops, erro'))

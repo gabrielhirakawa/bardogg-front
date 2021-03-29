@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { theme } from './theme'
 
 const GlobalSyles = createGlobalStyle`
   * {
@@ -20,9 +21,9 @@ const GlobalSyles = createGlobalStyle`
   }
 
   h1{
-    font-size: ${(props) => props.theme.h1};
+    font-size: ${theme.h1};
     font-weight: 500;
-    color: ${(props) => props.theme.black};
+    color: ${theme.black};
   }
 `
 

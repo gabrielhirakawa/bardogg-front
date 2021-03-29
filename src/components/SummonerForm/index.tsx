@@ -1,6 +1,6 @@
 import Button from 'components/Button'
 import Input from 'components/Input'
-import { EventHandler, useState } from 'react'
+import { EventHandler, FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
 import api from 'services/api'
 import { Spinner } from 'react-bootstrap'
@@ -13,7 +13,7 @@ export default function SummonerForm() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     setLoading(true)
     const id = router.query.id
