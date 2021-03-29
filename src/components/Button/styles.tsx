@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Props } from './index'
 
-export const Wrapper = styled('button')<{ bgColor: string }>`
+export const Wrapper = styled.button<Props>`
   border-radius: 10px;
   height: 40px;
   color: ${(props) => (props.color ? props.color : '#fff')};

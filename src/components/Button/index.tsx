@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { ReactNode, ButtonHTMLAttributes } from 'react'
 import * as S from './styles'
 
-type Props = {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   bgColor?: string
   width?: string
@@ -10,10 +10,11 @@ type Props = {
 export default function Button({
   children,
   bgColor = '#c1c1c1',
-  width = '100%'
+  width = '100%',
+  ...rest
 }: Props) {
   return (
-    <S.Wrapper bgColor={bgColor} width={width}>
+    <S.Wrapper bgColor={bgColor} width={width} {...rest}>
       <>{children}</>
     </S.Wrapper>
   )
