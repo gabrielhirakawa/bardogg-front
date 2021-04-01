@@ -1,4 +1,18 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
+import styled from '@emotion/styled'
+
+type ThemeProps = {
+  theme: {
+    black: string
+    purple: string
+    white: string
+    blue: string
+    green: string
+    red: string
+    yellow: string
+    h1: string
+  }
+}
 
 export const Wrapper = styled.main`
   background-color: ${(props) => props.theme.white};

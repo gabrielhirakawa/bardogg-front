@@ -1,9 +1,11 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { ThemeProvider } from 'styled-components'
 import { theme } from '../styles/theme'
 import '../styles/facebook.css'
-import GlobalStyles from 'styles/global'
+import { globalStyles } from '../styles/emotion'
+import { ThemeProvider } from '@emotion/react'
+// import GlobalStyles from 'styles/global'
+// import { ThemeProvider } from 'styled-components'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -31,7 +33,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
+        {/* <GlobalStyles /> */}
+        {globalStyles}
         <Component {...pageProps} />
       </ThemeProvider>
     </>

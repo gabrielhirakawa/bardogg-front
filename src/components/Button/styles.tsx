@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { Props } from './index'
 
 export const Wrapper = styled.button<Props>`
@@ -10,5 +11,6 @@ export const Wrapper = styled.button<Props>`
   cursor: pointer;
   margin: 10px 0;
   width: ${(props) => (props.width ? props.width : '100%')};
+  font-size: 14px;
   font-weight: 600;
 `
