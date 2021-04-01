@@ -45,8 +45,10 @@ export const RightContainer = styled.div`
 `
 
 export const Logo = styled.img`
-  width: 25rem;
-  margin-bottom: 2rem;
+  height: 400px;
+  /* width: 25rem;
+  height:
+  margin-bottom: 2rem; */
 `
 
 export const Description = styled.h1`
