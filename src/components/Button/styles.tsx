@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Props } from './index'
 
 export const Wrapper = styled.button<Props>`
-  border-radius: 10px;
+  border-radius: 4px;
   height: 40px;
   color: ${(props) => (props.color ? props.color : '#fff')};
   background-color: ${(props) => (props.bgColor ? props.bgColor : '#ccc')};
@@ -13,4 +13,5 @@ export const Wrapper = styled.button<Props>`
   width: ${(props) => (props.width ? props.width : '100%')};
   font-size: 14px;
   font-weight: 600;
+  text-transform: uppercase;
 `

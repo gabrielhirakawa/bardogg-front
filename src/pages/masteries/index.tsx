@@ -3,8 +3,9 @@ import styled from '@emotion/styled'
 import Input from 'components/Input'
 import Button from 'components/Button'
 import { useEffect, useState } from 'react'
-import api from 'services/api'
 import { Spinner } from 'react-bootstrap'
+import Swal from 'sweetalert2'
+import api from 'services/api'
 
 const Content = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Content = styled.div`
   padding: 20px 40px;
   width: 100%;
 
-  h2 {
+  h3 {
     font-size: 16px;
   }
 `
@@ -50,7 +51,7 @@ const TableDiv = styled.div`
     th {
       text-align: center;
       font-size: 18px;
-      padding: 10px 20px;
+      padding: 10px;
       color: ${(props) => props.theme.white};
 
       @media (max-width: 414px) {
@@ -88,7 +89,13 @@ export default function Masteries() {
       .then((res) => {
         setData(res.data)
       })
-      .catch((e) => {})
+      .catch((e) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Um erro inesperado aconteceu!'
+        })
+      })
 
     setLoadingButton(false)
   }
@@ -96,7 +103,7 @@ export default function Masteries() {
   return (
     <DefaultLayout tabActive="mastery" title="Maestrias">
       <Content>
-        <h2>Busque por summoner name</h2>
+        <h3>Busque por summoner name</h3>
         <Top>
           <Input
             value={currentSummoner}

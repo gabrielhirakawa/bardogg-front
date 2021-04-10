@@ -38,6 +38,18 @@ export const globalStyles = (
 
     <Global
       styles={css`
+        html,
+        input,
+        h1,
+        h2,
+        h3 {
+          color: ${theme.black};
+        }
+      `}
+    />
+
+    <Global
+      styles={css`
         h1 {
           font-size: ${theme.h1};
           font-weight: 500;

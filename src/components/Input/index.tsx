@@ -10,10 +10,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const InputStyled = styled.input`
   width: ${(props) => (props.width ? props.width : '100%')};
-  border-radius: 10px;
+  border-radius: 4px;
   height: 40px;
   text-align: center;
-  border: ${(props) => `1px solid ${props.theme.blue}`};
+  background-color: ${(props) => props.theme.gray};
+  color: rgba(69, 66, 65, 0.5);
+  font-weight: bold;
+  outline: none;
+  border: none;
   margin: 10px;
 `
 

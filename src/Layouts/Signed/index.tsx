@@ -11,8 +11,10 @@ export default function SignedLayout({ children }: Props) {
 
   if (typeof window !== 'undefined') {
     const token = localStorage.getItem('bardo_token')
+    console.log('opa', signed)
     if (!token) {
       signed = false
+
       router.push('/')
     } else {
       signed = true

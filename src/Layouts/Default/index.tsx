@@ -38,7 +38,8 @@ export const Content = styled.div`
   align-items: center;
   width: 100%;
   h2 {
-    font-size: 48px;
+    font-size: 36px;
+    text-transform: uppercase;
     color: ${(props) => props.theme.black};
   }
 `
