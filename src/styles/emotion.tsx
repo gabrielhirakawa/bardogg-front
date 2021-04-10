@@ -1,5 +1,5 @@
 import { css, Global } from '@emotion/react'
-import styled from '@emotion/styled'
+import { theme } from './theme'
 
 export const globalStyles = (
   <>
@@ -32,6 +32,16 @@ export const globalStyles = (
         body,
         #__next {
           height: 100%;
+        }
+      `}
+    />
+
+    <Global
+      styles={css`
+        h1 {
+          font-size: ${theme.h1};
+          font-weight: 500;
+          color: ${theme.black};
         }
       `}
     />

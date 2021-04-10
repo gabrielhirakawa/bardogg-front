@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   text?: string
@@ -14,7 +14,7 @@ const InputStyled = styled.input`
   height: 40px;
   text-align: center;
   border: ${(props) => `1px solid ${props.theme.blue}`};
-  margin: 10px 0;
+  margin: 10px;
 `
 
 export default function Input({ text, ...rest }: InputProps) {

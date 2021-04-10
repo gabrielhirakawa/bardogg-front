@@ -58,6 +58,7 @@ function Login() {
   return (
     <S.Wrapper>
       <S.FormContainer>
+        <img src="/img/logo-menor.png" style={{ height: '100px' }} />
         <S.Description>
           Realize <strong>login</strong> através dos serviços
         </S.Description>
@@ -76,10 +77,7 @@ function Login() {
       </S.FormContainer>
 
       <S.RightContainer>
-        <S.Logo
-          src="/img/bard.svg"
-          alt="Imagem de um átomo e React Avançado escrito ao lado."
-        />
+        <S.Logo src="/img/bard.svg" alt="Imagem bardo." />
       </S.RightContainer>
     </S.Wrapper>
   )

@@ -1,7 +1,8 @@
 import Menu, { MenuProps } from 'components/Menu'
 import SignedLayout from 'Layouts/Signed'
 import { ReactNode } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
+import Header from 'components/Header'
 
 interface LayoutProps extends MenuProps {
   children: ReactNode
@@ -11,33 +12,35 @@ interface LayoutProps extends MenuProps {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: ${(props) => props.theme.purple};
-  height: 100%;
+  background-color: ${(props) => props.theme.gray};
+  min-height: 100%;
+  flex-direction: column;
 `
 
 const Container = styled.div`
   display: flex;
-  background-color: ${(props) => props.theme.white};
   padding: 20px;
-  border-radius: 20px;
-  width: 1000px;
+  width: 1200px;
+  padding-bottom: 100px;
 
   @media (max-width: 1250px) {
-    width: 800;
+    width: 90%;
   }
 
   @media (max-width: 1080px) {
-    width: 80%;
+    width: 90%;
   }
 `
 
 export const Content = styled.div`
-  margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  h2 {
+    font-size: 48px;
+    color: ${(props) => props.theme.black};
+  }
 `
 
 export default function DefaultLayout({
@@ -48,8 +51,8 @@ export default function DefaultLayout({
   return (
     <SignedLayout>
       <Wrapper>
+        <Header active={tabActive} />
         <Container>
-          <Menu tabActive={tabActive} />
           <Content>
             {title ? <h2>{title}</h2> : <></>}
             {children}

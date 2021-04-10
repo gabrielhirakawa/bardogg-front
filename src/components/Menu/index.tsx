@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import {
   FaTrophy,
   FaUserAstronaut,
@@ -7,6 +7,7 @@ import {
   FaHome,
   FaBars
 } from 'react-icons/fa'
+import Link from 'next/link'
 
 export interface MenuProps {
   tabActive: 'home' | 'league' | 'mastery' | 'account'
@@ -108,16 +109,20 @@ export default function Menu({ tabActive }: MenuProps) {
         </AvatarArea>
         <ul>
           <li>
-            <ItemMenu active={tabActive === 'home' ? true : false}>
-              <FaHome size={26} />
-              Home
-            </ItemMenu>
+            <Link href="/dashboard">
+              <ItemMenu active={tabActive === 'home' ? true : false}>
+                <FaHome size={26} />
+                Home
+              </ItemMenu>
+            </Link>
           </li>
           <li>
-            <ItemMenu active={tabActive === 'league' ? true : false}>
-              <FaTrophy size={26} />
-              Liga
-            </ItemMenu>
+            <Link href="/league">
+              <ItemMenu active={tabActive === 'league' ? true : false}>
+                <FaTrophy size={26} />
+                Liga
+              </ItemMenu>
+            </Link>
           </li>
           <li>
             <ItemMenu active={tabActive === 'mastery' ? true : false}>

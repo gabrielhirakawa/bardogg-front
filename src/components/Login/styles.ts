@@ -14,7 +14,7 @@ type ThemeProps = {
   }
 }
 
-export const Wrapper = styled.main`
+export const Wrapper = styled('main')`
   background-color: ${(props) => props.theme.white};
   color: ${(props) => props.theme.black};
   width: 100%;
