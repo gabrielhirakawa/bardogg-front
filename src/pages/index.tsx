@@ -90,7 +90,7 @@ export default function Home() {
         <GitSection>
           <h2>CONTRIBUA COM O PROJETO</h2>
           <div>
-            <p>Você pode contribuar conosco trazendo 
+            <p>Você pode contribuir conosco trazendo 
               novas features e melhorias, basta fazer um 
               pull request pelo github 
               <Link href="https://github.com/gabrielhirakawa/bardogg-front">
