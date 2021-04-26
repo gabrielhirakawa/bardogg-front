@@ -1,0 +1,12 @@
+.facebook-button {
+  border-radius: 4px;
+  height: 40px;
+  color: #eee;
+  background-color: #3a559f;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  width: 250px;
+  font-weight: 600;
+  font-size: 14px;
+}
