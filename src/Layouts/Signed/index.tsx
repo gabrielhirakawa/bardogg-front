@@ -15,7 +15,7 @@ export default function SignedLayout({ children }: Props) {
     if (!token) {
       signed = false
 
-      router.push('/')
+      router.push('/auth')
     } else {
       signed = true
     }
