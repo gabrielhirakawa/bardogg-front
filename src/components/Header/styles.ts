@@ -25,7 +25,7 @@ export const MenuList = styled.div`
   display: flex;
 `
 
-export const MenuItem = styled.div`
+export const MenuItem = styled.div<{ active: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
