@@ -17,7 +17,11 @@ const GlobalSyles = createGlobalStyle`
   }
 
   body{
+<<<<<<< HEAD
     font-family: -apple-system, 'Montserrat', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+=======
+    font-family: 'Montserrat', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+>>>>>>> feature/landing
   }
 
   h1{

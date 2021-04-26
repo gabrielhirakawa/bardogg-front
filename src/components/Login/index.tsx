@@ -71,9 +71,15 @@ function Login() {
           cssClass="facebook-button"
           callback={responseFacebook}
         />
+<<<<<<< HEAD
         <Button width="250px" bgColor="#EA6E50">
           Login com o Google
         </Button>
+=======
+        {/* <Button width="250px" bgColor="#EA6E50">
+          Login com o Google
+        </Button> */}
+>>>>>>> feature/landing
       </S.FormContainer>
 
       <S.RightContainer>

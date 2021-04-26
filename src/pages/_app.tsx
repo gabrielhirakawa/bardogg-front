@@ -18,7 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="Status league of legends" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
+<<<<<<< HEAD
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+=======
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+>>>>>>> feature/landing
           rel="stylesheet"
         />
         <link
