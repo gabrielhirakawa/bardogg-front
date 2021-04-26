@@ -90,7 +90,7 @@ export default function Account() {
             <Button bgColor={theme.purple}>Alterar</Button>
           </form>
           <AvatarInfo>
-            <img src={img} />
+            <img src={img ? img : ''} />
             <label>{name}</label>
             <button>Sair</button>
           </AvatarInfo>
