@@ -257,6 +257,12 @@ export const Footer = styled.div`
   a{
       color: #fff;
   }
+
+  @media(max-width: 650px){
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const SelectDiv = styled.div`
