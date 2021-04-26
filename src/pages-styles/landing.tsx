@@ -72,6 +72,14 @@ export const LoginAccess = styled.div`
     text-decoration: none;
     color: #fff;
   }
+
+  @media(max-width: 650px){
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
 `;
 
 export const TopContainer = styled.div`
@@ -98,6 +106,7 @@ export const TopContainer = styled.div`
 
   @media(max-width: 1080px){
       flex-direction: column;
+      margin-top: 40px;
       div{
         display: flex;
         flex-direction: column;
@@ -111,8 +120,11 @@ export const TopContainer = styled.div`
       img{
         align-self: center;
         margin: 10px 0;
+        height: 120px;
       }
     }
+
+ 
 `;
 
 export const Separator = styled.div`
@@ -153,6 +165,12 @@ export const FeatureItem = styled.div`
       font-size: 18px;
     }
   }
+
+  @media(max-width: 650px){
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const HowToStart = styled.section`
@@ -179,6 +197,12 @@ export const HowToStart = styled.section`
     }
   }
 
+  @media(max-width: 650px){
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
 `;
 
 export const GitSection = styled.section`
@@ -206,7 +230,16 @@ export const GitSection = styled.section`
     /* text-align: center; */
     a{
       color: #fff;
+    }
   }
+
+  @media(max-width: 650px){
+    text-align: center;
+    div{
+      flex-direction: column;
+      align-items: center;
+
+    }
   }
   
 `;
