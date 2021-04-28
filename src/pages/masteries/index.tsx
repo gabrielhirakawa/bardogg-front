@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import DefaultLayout from 'Layouts/Default'
 import styled from '@emotion/styled'
 import Input from 'components/Input'
@@ -102,6 +104,9 @@ export default function Masteries() {
 
   return (
     <DefaultLayout tabActive="mastery" title="Maestrias">
+       <Head>
+        <title>Maestrias | Bardo.gg</title>
+      </Head>
       <Content>
         <h3>Busque por summoner name</h3>
         <Top>
@@ -109,7 +114,14 @@ export default function Masteries() {
             value={currentSummoner}
             onChange={(e) => setCurrentSummoner(e.target.value)}
           />
-          <Button type="button" bgColor="#11698E" onClick={() => loadData()}>
+          <Button 
+            width="250px"
+            disabled={loadingButton? true: false} 
+            type="button" 
+            bgColor="#11698E" 
+            onClick={() => 
+            loadData()
+            }>
             {loadingButton ? (
               <Spinner size="sm" animation="border" />
             ) : (

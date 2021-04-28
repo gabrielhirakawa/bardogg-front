@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react';
 import Button from 'components/Button';
-import { Form } from 'react-bootstrap'
 import { messages, languagesProps } from '../locale/languages'
 import { 
   Container, 
@@ -22,6 +21,7 @@ export default function Home() {
   const [language, setLanguage] = useState('pt')
   return (
   <Container>
+  
     <Content>
       <Header>
         <img

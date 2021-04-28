@@ -40,6 +40,8 @@ export const globalStyles = (
       styles={css`
         html,
         input,
+        span,
+        p,
         h1,
         h2,
         h3 {

@@ -4,9 +4,11 @@ import { useRouter } from 'next/router'
 import * as S from './styles'
 import Button from '../Button'
 import api from '../../services/api'
+import { useState } from 'react'
 
 function Login() {
   const router = useRouter()
+  const [loading, setLoading] = useState(false);
 
   if (typeof window !== 'undefined') {
     const token = localStorage.getItem('bardo_token')
@@ -18,16 +20,21 @@ function Login() {
   }
 
   function responseFacebook(response: ReactFacebookLoginInfo) {
+    setLoading(true)
     const { name, email, accessToken, userID, picture } = response
 
     const n = name as string
     const img = picture?.data.url as string
 
-    localStorage.setItem('bardo_token', accessToken)
-    localStorage.setItem('bardo_id', userID)
-    localStorage.setItem('bardo_img', img)
-    localStorage.setItem('bardo_username', n)
-    loadLogin(response)
+    if(response.email){
+      localStorage.setItem('bardo_token', accessToken)
+      localStorage.setItem('bardo_id', userID)
+      localStorage.setItem('bardo_img', img)
+      localStorage.setItem('bardo_username', n)
+      loadLogin(response)
+    }
+
+    setLoading(false)
   }
 
   async function loadLogin({
@@ -36,6 +43,7 @@ function Login() {
     name,
     picture
   }: ReactFacebookLoginInfo) {
+    
     const res = await api
       .post('/user', {
         id,
@@ -63,6 +71,7 @@ function Login() {
           Realize <strong>login</strong> através dos serviços
         </S.Description>
         <FacebookLogin
+          isDisabled={loading ? true : false}
           appId="310657367063133"
           autoLoad={false}
           fields="name,email,picture"

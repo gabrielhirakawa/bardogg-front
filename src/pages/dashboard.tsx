@@ -1,4 +1,5 @@
 import DefaultLayout from 'Layouts/Default'
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { Spinner } from 'react-bootstrap'
@@ -82,6 +83,9 @@ export default function Dashboard() {
 
   return (
     <DefaultLayout tabActive="home">
+        <Head>
+      <title>Home | Bardo.gg</title>
+    </Head>
       <Container>
         {loading ? (
           <Spinner animation="border" />

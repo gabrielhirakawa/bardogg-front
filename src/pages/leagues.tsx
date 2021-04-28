@@ -1,23 +1,22 @@
-import Button from 'components/Button'
-import Input from 'components/Input'
+import Head from 'next/head'
+
 import DefaultLayout from 'Layouts/Default'
+import CardLeague from 'components/LeagueCard'
+
+import * as S from 'pages-styles/leagues.styles'
 
 export default function League() {
   return (
     <DefaultLayout tabActive="league">
-      <Input text="Digite o nome de invocador" />
-      <Button bgColor="">Buscar</Button>
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />{' '}
-      <Input text="Digite o nome de invocador" />
+      <Head>
+        <title>Ligas | Bardo.gg</title>
+      </Head>
+      <span>Suas ligas</span>
+      <CardLeague />
+      <S.newLeagueButton>
+        + Criar nova liga
+      </S.newLeagueButton>
+      
     </DefaultLayout>
   )
 }

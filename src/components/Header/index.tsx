@@ -1,4 +1,6 @@
 import * as S from './styles'
+import { elastic as Slide } from 'react-burger-menu'
+import Link from 'next/link'
 import {
   FaUserCog,
   FaUserAstronaut,
@@ -11,12 +13,33 @@ import { useRouter } from 'next/router'
 export default function Header({ active = 'home' }) {
   const router = useRouter()
   return (
-    <S.Container>
+    <div id="App">
+      <S.MenuMobile>
+        <Slide right pageWrapId={"page-wrap"} outerContainerId={"App"}  >
+
+            <a id="home" href="/dashboard" className="menu-item" >Home</a>
+        
+
+            <a id="home" href="leagues" className="menu-item" >Ligas</a>
+     
+        
+            <a id="home" href="/masteries" className="menu-item" >Maestrias</a>
+        
+     
+            <a id="home" href="/account" className="menu-item" >Conta</a>
+     
+            
+           
+        </Slide>
+      </S.MenuMobile>
+
+    <S.Container id="page-wrap">
       <img
         onClick={() => router.push('/dashboard')}
         src="/img/logo-menor.png"
         alt="logo"
       />
+      
       <S.Nav>
         <S.MenuList>
           <S.MenuItem
@@ -54,5 +77,6 @@ export default function Header({ active = 'home' }) {
         </S.MenuList>
       </S.Nav>
     </S.Container>
+    </div>
   )
 }

@@ -36,6 +36,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
   width: 100%;
   h2 {
     font-size: 36px;
@@ -50,7 +51,7 @@ export default function DefaultLayout({
   tabActive = 'home'
 }: LayoutProps) {
   return (
-    <SignedLayout>
+    <SignedLayout >
       <Wrapper>
         <Header active={tabActive} />
         <Container>

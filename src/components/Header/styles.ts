@@ -23,6 +23,18 @@ export const Nav = styled.div`
 
 export const MenuList = styled.div`
   display: flex;
+
+  @media(max-width: 1080px){
+    display: none;
+  }
+`
+
+export const MenuMobile = styled.div`
+  display: none;
+
+  @media(max-width: 1080px){
+    display: flex;
+  }
 `
 
 export const MenuItem = styled.div<{ active?: boolean }>`
