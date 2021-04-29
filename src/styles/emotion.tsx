@@ -19,7 +19,7 @@ export const globalStyles = (
           margin: 0;
           background: #fff;
           height: 100%;
-          font-family: -apple-system, 'Montserrat', 'Segoe UI', Roboto, Oxygen,
+          font-family: 'Montserrat', 'Segoe UI', Roboto, Oxygen,
             Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           font-size: 24px;
         }

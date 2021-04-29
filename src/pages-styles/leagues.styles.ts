@@ -3,7 +3,8 @@ import styled from '@emotion/styled'
 export const newLeagueButton = styled.button`
     margin-top: 30px;
     color: ${props => props.theme.purple};
-    font-size: 30px;
+    background-color: transparent;
+    font-size: 26px;
     font-weight: bold;
     border: none;
 

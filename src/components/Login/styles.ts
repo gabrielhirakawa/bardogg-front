@@ -18,10 +18,9 @@ export const Wrapper = styled('main')`
   background-color: ${(props) => props.theme.white};
   color: ${(props) => props.theme.black};
   width: 100%;
-  height: 100%;
+  height: 100vh;
   text-align: center;
   display: flex;
-  height: 100%;
   align-items: center;
   justify-content: center;
 

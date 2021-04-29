@@ -1,5 +1,7 @@
 import FacebookLogin, { ReactFacebookLoginInfo } from 'react-facebook-login'
 import { useRouter } from 'next/router'
+import Swal from 'sweetalert2'
+
 
 import * as S from './styles'
 import Button from '../Button'
@@ -21,16 +23,8 @@ function Login() {
 
   function responseFacebook(response: ReactFacebookLoginInfo) {
     setLoading(true)
-    const { name, email, accessToken, userID, picture } = response
-
-    const n = name as string
-    const img = picture?.data.url as string
 
     if(response.email){
-      localStorage.setItem('bardo_token', accessToken)
-      localStorage.setItem('bardo_id', userID)
-      localStorage.setItem('bardo_img', img)
-      localStorage.setItem('bardo_username', n)
       loadLogin(response)
     }
 
@@ -41,26 +35,43 @@ function Login() {
     id,
     email,
     name,
-    picture
+    picture,
+    accessToken,
+    userID
   }: ReactFacebookLoginInfo) {
+
+    const n = name as string
+    const img = picture?.data.url as string
     
-    const res = await api
+    await api
       .post('/user', {
         id,
         email,
         name,
         imageUrl: picture?.data.url,
         typeAuth: 'facebook'
-      })
-      .catch((e) => alert('ops, erro'))
+      }).then(res => {
 
-    if (res && res.data) {
-      if (res.data.statusCode === '100') {
-        router.push('/dashboard')
-      } else if (res.data.statusCode === '101') {
-        router.push(`/summoner/${id}`)
-      }
-    }
+        localStorage.setItem('bardo_token', accessToken)
+        localStorage.setItem('bardo_id', userID)
+        localStorage.setItem('bardo_img', img)
+        localStorage.setItem('bardo_username', n)
+
+        if (res.data.statusCode === '100') {
+          router.push('/dashboard')
+        } else if (res.data.statusCode === '101') {
+          router.push(`/summoner/${id}`)
+        }
+
+      })
+      .catch((e) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Houve um erro inesperado!',
+        })
+      })
+
   }
 
   return (

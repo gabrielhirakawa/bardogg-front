@@ -49,7 +49,7 @@ export default function SummonerForm() {
           />
           <Button bgColor={theme.blue}>
             {loading ? (
-              <Spinner animation="border" variant="light" />
+              <Spinner animation="border" variant="light" size="sm" />
             ) : (
               'Confirmar'
             )}
