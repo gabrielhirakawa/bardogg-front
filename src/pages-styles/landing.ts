@@ -163,6 +163,7 @@ export const FeatureItem = styled.div`
     p{
       font-weight: 500;
       font-size: 18px;
+      color: ${props => props.theme.white};
     }
   }
 
@@ -187,6 +188,9 @@ export const HowToStart = styled.section`
   h2{
     font-weight: 700;
     font-size: 32px;
+    color: ${props => props.theme.white};
+  }
+  p{
     color: ${props => props.theme.white};
   }
   span{
@@ -228,8 +232,9 @@ export const GitSection = styled.section`
   }
   p{
     /* text-align: center; */
+    color: ${props => props.theme.white};
     a{
-      color: #fff;
+      color: ${props => props.theme.yellow};
     }
   }
 
@@ -249,11 +254,15 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
+  color: ${props => props.theme.white};
   img{
     height: 20px;
     margin: 0 5px;
   }
   font-size: 20px;
+  span{
+    color: ${props => props.theme.white};
+  }
   a{
       color: #fff;
   }
